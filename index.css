@@ -1,0 +1,28 @@
+body { 
+    background: radial-gradient(circle, rgba(2,0,36,1) 93%, rgba(37,1,1,1) 97%, rgba(78,2,2,1) 100%);
+}
+
+.card_container_border {
+    width: 900px;
+    height: 900px;
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* outline: 5px solid white; */
+    /* background-color: white; */
+}
+
+.border {
+    max-width: 900px;
+    max-height: 900px;
+    position: absolute;
+}
+
+.card_container {
+    width: 890px;
+    height: 890px;
+    margin:auto;
+    background-color: red;
+    
+}
