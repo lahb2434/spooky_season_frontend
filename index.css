@@ -1,5 +1,6 @@
 body { 
     background: radial-gradient(circle, rgba(2,0,36,1) 93%, rgba(37,1,1,1) 97%, rgba(78,2,2,1) 100%);
+    cursor: url(https://cur.cursors-4u.net/others/oth-2/oth110.cur), auto !important;
 }
 
 .card_container_border {
@@ -25,4 +26,23 @@ body {
     margin:auto;
     background-color: red;
     
+}
+
+.element_container {
+    width: 900px;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+h3 {
+    color: red;
+    padding-inline: 10px 5px;
+}
+
+h3:hover {
+    cursor: url(https://cur.cursors-4u.net/others/oth-2/oth115.cur), auto !important;
 }
