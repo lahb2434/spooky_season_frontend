@@ -25,6 +25,9 @@ body {
     height: 890px;
     margin:auto;
     background-color: red;
+        /* display: flex;
+        align-items: center;
+        justify-content: center; */
     
 }
 
