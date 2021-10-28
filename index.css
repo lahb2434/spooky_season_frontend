@@ -25,10 +25,10 @@ body {
     height: 890px;
     margin:auto;
     background-color: red;
-        /* display: flex;
-        align-items: center;
-        justify-content: center; */
-    
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    overflow: hidden;
 }
 
 .element_container {
@@ -39,6 +39,7 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    
 }
 
 h3 {
@@ -48,4 +49,8 @@ h3 {
 
 h3:hover {
     cursor: url(https://cur.cursors-4u.net/others/oth-2/oth115.cur), auto !important;
+}
+
+.label {
+    color: white;
 }

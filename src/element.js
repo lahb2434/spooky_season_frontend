@@ -28,10 +28,10 @@ class Element {
         cardContainer.appendChild(img)
         let getofst = img.getBoundingClientRect()
         let ofst = this.solve(getofst.left, getofst.top)
+       
         this.setTranslate(ofst.x,ofst.y,img)
-        let cardElem = new CardElement({name: img.id})
-        cardElem.Xoffset = ofst.x
-        cardElem.Yoffset = ofst.y
+        let cardElem = new CardElement(img.id, ofst.x, ofst.y) 
+        cardElem.moveElement(img)
        })
    }
    
@@ -40,8 +40,8 @@ class Element {
   )
    
   solve (xNum, yNum) {
-    let x = (379 - xNum)
-    let y = (311 - yNum)
+    let x = (73 - xNum)
+    let y = (13 - yNum)
     return {x: x, y: y}
   }
 
