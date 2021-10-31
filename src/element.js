@@ -10,33 +10,36 @@ class Element {
     renderElementSelection(){
         let selection = document.createElement('h3')
         selection.id = this.id
-        selection.className = 'element'
-        selection.innerHTML = this.formatName()
-        this.selectImage(selection)
+        selection.innerHTML = Element.formatName(this)
+        this.selectElement(selection)
         return selection
     }
     
-    selectImage(selection){
+    selectElement(selection){
       let counter = 0;
       let cardContainer = document.querySelector('.card_container')
+      let minus = document.getElementById('decrease')
+      let plus = document.getElementById('increase')
       selection.addEventListener('click', () => { 
         let img = document.createElement('img')
         img.src = this.image_url
         img.style = "width auto; height: 150px;"
         img.id = `${this.name}_${counter}`
+        img.className = 'element'
         counter += 1;
         cardContainer.appendChild(img)
         let getofst = img.getBoundingClientRect()
         let ofst = this.solve(getofst.left, getofst.top)
-       
+        
         this.setTranslate(ofst.x,ofst.y,img)
-        let cardElem = new CardElement(img.id, ofst.x, ofst.y) 
+        let cardElem = new CardElement(img.id, ofst.x, ofst.y)
         cardElem.moveElement(img)
+        cardElem.resizeCardElement(cardContainer, minus, plus)
        })
    }
    
-   formatName = () => (
-    this.name.replaceAll("_", " ").toUpperCase()
+   static formatName = (obj) => (
+    obj.name.replaceAll("_", " ").toUpperCase()
   )
    
   solve (xNum, yNum) {
@@ -48,6 +51,9 @@ class Element {
   setTranslate(xPos, yPos, el) {
     el.style.transform = "translate(" + xPos + "px, " + yPos + "px)";
   }
+
+
+
 
 }
 Element.all = []

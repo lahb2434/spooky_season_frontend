@@ -1,5 +1,6 @@
 body { 
-    background: radial-gradient(circle, rgba(2,0,36,1) 93%, rgba(37,1,1,1) 97%, rgba(78,2,2,1) 100%);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 66%, rgba(59,17,17,1) 90%, rgba(125,1,1,1) 100%);
+
     cursor: url(https://cur.cursors-4u.net/others/oth-2/oth110.cur), auto !important;
 }
 
@@ -29,9 +30,10 @@ body {
     align-items: center;
     justify-content: center; */
     overflow: hidden;
+    background-size:cover;
 }
 
-.element_container {
+.item_container {
     width: 900px;
     height: auto;
     margin: auto;
@@ -47,10 +49,15 @@ h3 {
     padding-inline: 10px 5px;
 }
 
-h3:hover {
+/* h3:hover {
     cursor: url(https://cur.cursors-4u.net/others/oth-2/oth115.cur), auto !important;
-}
+} */
 
 .label {
     color: white;
 }
+
+#increase, #decrease{
+    display: inline;
+}
+
