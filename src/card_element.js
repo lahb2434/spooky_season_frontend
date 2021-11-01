@@ -63,9 +63,7 @@ class CardElement {
         let cardDiv = container
         let minus = less
         let plus = more
-        console.log(plus)
-        console.log(minus)
-        console.log(cardDiv)
+        
         cardDiv.addEventListener('click', (e) => {
             resizeElement = e.target
           })

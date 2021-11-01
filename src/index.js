@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   getCardItems(elementDatabase, createElements)
   getCardItems(backgroundDatabase, createBackgrounds)
-  
+  Card.cardCompiler()
 })
 
 
@@ -33,6 +33,7 @@ function createBackgrounds(background){
     let newBackground = new Background(background)
     backgroundContainer.appendChild(newBackground.renderBackgroundSelection()) 
 }
+
 
 
 
