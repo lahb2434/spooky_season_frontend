@@ -57,7 +57,7 @@ class Element {
     let ofst = Element.solve(getofst.left, getofst.top)
     Element.setTranslate(ofst.x,ofst.y,img) 
 
-    let cardElem = new CardElement(img.id, ofst.x, ofst.y)
+    let cardElem = new CardElement(img.id, ofst.x, ofst.y, getofst.left, getofst.right, img.height)
 
     cardElem.moveElement(img)
     cardElem.resizeCardElement(cardContainer, minus, plus)

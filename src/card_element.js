@@ -2,12 +2,13 @@
 class CardElement {
     
 
-    constructor(name, xOffset, yOffset, imageSize, active = false){
+    constructor(name, xOffset, yOffset, xPosition, yPosition, imageSize ){
         this.name = name;
         this.xOffset = xOffset;
         this.yOffset = yOffset;
         this.imageSize = imageSize
-        this.active = active
+        this.xPosition = xPosition
+        this.yPosition = yPosition
         CardElement.all.push(this)
     }
 
@@ -46,6 +47,12 @@ class CardElement {
               target.yOffset = currentY;
     
               setTranslate(currentX, currentY, this);
+
+              let elementPosition = e.target.getBoundingClientRect()
+              target.xPosition = elementPosition.x 
+              target.yPosition = elementPosition.y
+
+              target.imageSize = e.target.height
           }
         }
    
@@ -63,17 +70,23 @@ class CardElement {
         let cardDiv = container
         let minus = less
         let plus = more
+        let elementObject;
         
         cardDiv.addEventListener('click', (e) => {
-            resizeElement = e.target
+          elementObject = CardElement.all.find(elementObject => elementObject.name === e.target.id)
+          resizeElement = e.target
           })
         
-        plus.addEventListener('click', (e) => { resizeElement.style.height = `${parseInt(resizeElement.style.height.replace('px', ''))+10}px`})
+        plus.addEventListener('click', (e) => { 
+          resizeElement.style.height = `${parseInt(resizeElement.style.height.replace('px', ''))+10}px`
+          elementObject.imageSize = resizeElement.height
+        })
     
         minus.addEventListener('click', () =>{
             resizeElement.style.height = `${parseInt(resizeElement.style.height.replace('px', ''))-10}px`
+            elementObject.imageSize = resizeElement.height
         })
-        
+
     }
     
 

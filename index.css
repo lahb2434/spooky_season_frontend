@@ -57,7 +57,43 @@ h3 {
     color: white;
 }
 
-#increase, #decrease, #save{
+#increase, #decrease, #save, #resize, #load {
     display: inline;
 }
 
+#resize {
+    margin-left: 150px;
+}
+
+#save {
+    position:absolute;
+    right: 200px;
+    margin: 0;
+}
+
+#box {
+    position:absolute;
+    right: 10px;
+}
+
+#load {
+    position: absolute;
+    right: 350px;
+    margin: 0;
+}
+
+.card_list_container {
+    display: none;
+    position: absolute;
+    background-color: red;
+    right: 360px;
+   
+}
+
+li {
+    display: block;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
