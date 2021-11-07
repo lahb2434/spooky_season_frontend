@@ -59,6 +59,11 @@ h3 {
 
 #increase, #decrease, #save, #resize, #load {
     display: inline;
+    user-select: none;
+}
+
+#increase:hover, #decrease:hover, #save:hover, #resize:hover, #load:hover, .background:hover, .element:hover, p:hover{
+    color: white;
 }
 
 #resize {
@@ -86,11 +91,11 @@ h3 {
     display: none;
     position: absolute;
     background-color: red;
-    right: 360px;
+    right: 310px;
    
 }
 
-li {
+p {
     display: block;
     font-size: 18px;
     color: black;

@@ -10,6 +10,7 @@ class Element {
     renderElementSelection(){
         let selection = document.createElement('h3')
         selection.id = this.id
+        selection.classList = 'element'
         selection.innerHTML = Element.formatName(this)
         this.selectElement(selection, this)
         return selection

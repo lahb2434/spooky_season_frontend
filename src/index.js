@@ -1,13 +1,15 @@
 const elementDatabase = "http://127.0.0.1:3000/elements"
 const backgroundDatabase = "http://127.0.0.1:3000/backgrounds"
+const cardDatabase = "http://127.0.0.1:3000/cards"
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('dom is loaded');
   
   getCardItems(elementDatabase, createElements)
   getCardItems(backgroundDatabase, createBackgrounds)
+  getCardItems(cardDatabase, getCardLoadout)
   Card.cardCompiler()
-  loadCards()
+  loadCardsPanel()
 
 })
 
@@ -33,7 +35,15 @@ function createBackgrounds(background){
     backgroundContainer.appendChild(newBackground.renderBackgroundSelection()) 
 }
 
-function  loadCards(){
+function getCardLoadout(card) {
+  console.log(card)
+  let loadDiv = document.querySelector('.card_list_container')
+  let p = document.createElement('p')
+  p.innerHTML = card.name
+  loadDiv.appendChild(p)
+}
+
+function  loadCardsPanel(){
   let load = document.getElementById('load')
 
   load.addEventListener('click', loadCardsPanel)
