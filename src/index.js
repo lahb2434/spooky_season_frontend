@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   getCardItems(elementDatabase, createElements)
   getCardItems(backgroundDatabase, createBackgrounds)
   getCardItems(cardDatabase, getCardLoadout)
-  Card.cardCompiler()
-  loadCardsPanel()
+  Card.cardSaveToApi()
+  showCardsPanel()
 
 })
 
@@ -36,25 +36,46 @@ function createBackgrounds(background){
 }
 
 function getCardLoadout(card) {
-  console.log(card)
   let loadDiv = document.querySelector('.card_list_container')
   let p = document.createElement('p')
+  p.id = `${card.name}_${card.id}`
   p.innerHTML = card.name
+
+  p.addEventListener('click', () => {
+    fetch(`http://127.0.0.1:3000/cards/${p.id.slice(-1)}`)
+      .then(response => response.json())
+      .then(item => {
+        let cardContainer = document.querySelector('.card_container')
+        cardContainer.innerHTML = ''
+        CardElement.all = []
+
+        let findBckGrnd = item.backgrounds[0]
+        let setBckGrnd = Background.all.find(background => background.id === findBckGrnd.id)
+        Background.setBackground(setBckGrnd)
+        
+        for(let element of item.element_positions){
+          Element.createCardElement(element)
+          console.log(element)
+        }
+      })
+  })
+
   loadDiv.appendChild(p)
+
 }
 
-function  loadCardsPanel(){
+function  showCardsPanel(){
   let load = document.getElementById('load')
-
+  let cardList = document.querySelector(".card_list_container"); 
   load.addEventListener('click', loadCardsPanel)
-
   function loadCardsPanel(){
-    let cardList = document.querySelector(".card_list_container");  
-         if(cardList.style.display === "none") {  
-            cardList.style.display ="block";  
-         } else {  
-            cardList.style.display ="none";  
-         }   
+     
+      if(cardList.style.display === "") {  
+         cardList.style.display ="block";  
       } 
-      console.log('it worked')
+      else { 
+        cardList.style.display ="";
+        }     
   }
+      
+}

@@ -1,16 +1,16 @@
 class Card {
 
-    static cardCompiler() {
+    static cardSaveToApi() {
       let save = document.getElementById('save')
       let cardName = document.querySelector('input') //cardName.value
       
-      save.addEventListener('click', cardPost)
-
+      save.addEventListener('mousedown', cardPost)
+      save.addEventListener('mouseup', () => {document.querySelector('input').value = ''})
       function cardPost() {
+       
         let background = getBackground()
-
         const bodyData = {card: {name: cardName.value, background: background, card_elements: CardElement.all }  }
-      
+        console.log(bodyData)
         fetch("http://127.0.0.1:3000/cards", {
           method: "POST",
           headers: {"Content-Type": "application/json"},
@@ -18,8 +18,7 @@ class Card {
         })
         .then(response => response.json())
         .then(json => {
-          // localStorage.setItem('jwt_token', json.jwt)
-          // renderUserProfile()
+          getCardLoadout(json)
         })
       }
 

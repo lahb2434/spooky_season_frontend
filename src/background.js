@@ -17,14 +17,14 @@ class Background {
     }
 
     selectBackground(selection){
-        let cardContainer = document.querySelector('.card_container')
-       
         selection.addEventListener('click', () => { 
-            console.log(selection)
-            console.log(this)
-          cardContainer.style.backgroundImage = `url(${this.image_url})`
-          
+           Background.setBackground(this)
         })
+    }
+
+    static setBackground(background){
+        let cardContainer = document.querySelector('.card_container')
+        cardContainer.style.backgroundImage = `url(${background.image_url})`
     }
 }
 
