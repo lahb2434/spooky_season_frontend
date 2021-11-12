@@ -85,7 +85,7 @@ class CardElement {
         minus.addEventListener('click', () =>{
             resizeElement.style.height = `${parseInt(resizeElement.style.height.replace('px', ''))-10}px`
             elementObject.imageSize = resizeElement.height
-        })
+        })  
     }
   }
 

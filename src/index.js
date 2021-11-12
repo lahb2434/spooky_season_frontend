@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   getCardItems(cardDatabase, getCardLoadout)
   Card.cardSaveToApi()
   showCardsPanel()
+  clearCardDisplay()
+  stopBorderInterferance()
 
 })
 
@@ -76,6 +78,21 @@ function  showCardsPanel(){
       else { 
         cardList.style.display ="";
         }     
-  }
-      
+  }     
+}
+
+function clearCardDisplay(){
+  let card = document.querySelector('.card_container')
+  let clear = document.getElementById('clear')
+  
+  clear.addEventListener('click', () => {
+    CardElement.all = []
+    card.style.background = ''
+    card.innerHTML = ''
+  })
+}
+
+function stopBorderInterferance(){
+  let border = document.querySelector('.border')
+  border.ondragstart = function() { return false; }
 }

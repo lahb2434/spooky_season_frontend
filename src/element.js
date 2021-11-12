@@ -62,8 +62,8 @@ class Element {
   )
    
   static solve (xNum, yNum) {
-    let x = (360 - xNum)
-    let y = (20 - yNum)
+    let x = (533 - xNum)
+    let y = (226 - yNum)
     return {x: x, y: y}
   }
 

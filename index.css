@@ -4,6 +4,19 @@ body {
     height: auto;
 }
 
+header{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.header_logo{
+    height:5em;
+    width: auto;
+   
+}
+
 .card_container_border {
     width: 900px;
     height: 900px;
@@ -40,13 +53,17 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly
     
 }
 
 h3 {
     color: red;
     padding-inline: 10px 5px;
+}
+
+.label{
+    text-align: center;
 }
 
 /* h3:hover {
@@ -57,41 +74,31 @@ h3 {
     color: white;
 }
 
-#increase, #decrease, #save, #resize, #load {
+#increase, #decrease, #save, #resize, #load, #clear {
     display: inline;
     user-select: none;
+    margin: 0;
 }
 
-#increase:hover, #decrease:hover, #save:hover, #resize:hover, #load:hover, .background:hover, .element:hover, p:hover{
+#increase:hover, #decrease:hover, #save:hover, #resize:hover, #load:hover, .background:hover, .element:hover, p:hover, #clear:hover{
     color: white;
 }
 
-#resize {
-    margin-left: 150px;
-}
-
-#save {
-    position:absolute;
-    right: 200px;
-    margin: 0;
-}
-
-#box {
-    position:absolute;
-    right: 10px;
-}
-
-#load {
-    position: absolute;
-    right: 350px;
-    margin: 0;
+.card_options{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .card_list_container {
     display: none;
     position: absolute;
     background-color: red;
-    right: 310px;
+    
+    margin-top: 20px;
    
 }
 
