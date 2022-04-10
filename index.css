@@ -1,5 +1,5 @@
 body { 
-    background: linear-gradient(180deg, rgba(2,0,36,1) 66%, rgba(59,17,17,1) 90%, rgba(125,1,1,1) 100%);
+    background: linear-gradient(180deg, rgb(0, 0, 0) 66%, rgba(59,17,17,1) 90%, rgba(125,1,1,1) 100%);
     cursor: url(https://cur.cursors-4u.net/others/oth-2/oth110.cur), auto !important;
     height: auto;
 }
